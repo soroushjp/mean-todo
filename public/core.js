@@ -18,7 +18,6 @@ meanTodo.controller('MainController', ['$scope', '$http', function($scope, $http
 		.success(function(data) {
 			$scope.formData = {}; //Clear form for user after submit
 			$scope.todos = data;
-			$scope.$apply();
 			console.log(data);
 		})
 		.error(function(data) {
@@ -30,7 +29,6 @@ meanTodo.controller('MainController', ['$scope', '$http', function($scope, $http
 		$http.delete('/api/todos/' + id)
 		.success(function(data) {
 			$scope.todos = data;
-			$scope.$apply();
 			console.log(data);
 		})
 		.error(function(data) {
